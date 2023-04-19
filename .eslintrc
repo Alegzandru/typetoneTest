@@ -3,12 +3,34 @@
     "airbnb",
     "airbnb-typescript"
   ],
+  "plugins": [
+    "prefer-arrow"
+  ],
   "parserOptions": {
     "project": "./tsconfig.json"
   },
+  "ignorePatterns": ["*.html"],
   "rules": {
     "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "prefer-arrow/prefer-arrow-functions": "error"
   },
-  "ignorePatterns": ["*.html"]
+  "overrides": [
+    {
+      "files": [
+        "**/*.ts",
+        "**/*.tsx"
+      ],
+      "rules": {
+        "react/function-component-definition": "off",
+        "linebreak-style": "off",
+        "react/require-default-props": "off"
+      }
+    }
+  ],
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  }
 }
