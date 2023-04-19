@@ -2,7 +2,7 @@ import HeaderTab from '~/components/HeaderTab/HeaderTab';
 import AccountTab from '~/components/AccountTab/AccountTab';
 
 const Header = () => (
-  <div className="h-20 p-3 w-full rounded-xl bg-white flex items-center justify-between">
+  <div className="h-20 p-3 mb-3 w-full rounded-xl bg-white flex items-center justify-between">
     <img
       src="logoExtended.png"
       alt="Typetone Logo"

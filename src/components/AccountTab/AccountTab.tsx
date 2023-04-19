@@ -5,7 +5,7 @@ type Props = {
   imgSrc?: string
 };
 
-const Image = ({ logged, imgSrc }: Pick<Props, 'logged' | 'imgSrc'>): JSX.Element => {
+export const AccountPhoto = ({ logged, imgSrc }: Pick<Props, 'logged' | 'imgSrc'>): JSX.Element => {
   if (logged) {
     return (
       <img
@@ -49,7 +49,7 @@ const AccountTab = ({
     type="button"
     className="flex items-center justify-end w-60"
   >
-    <Image
+    <AccountPhoto
       logged={logged}
       imgSrc={imgSrc}
     />

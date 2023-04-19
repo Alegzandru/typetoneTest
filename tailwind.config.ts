@@ -10,7 +10,10 @@ export default {
     extend: {
       colors: {
         ui: {
+          lightGrey: '#FCFCFD',
           grey: '#F5F5F5',
+          border: '#D0D5DD',
+          placeholder: '#667085',
         },
         brand: {
           light: '#FDF2F1',
