@@ -12,6 +12,7 @@ export default {
         ui: {
           lightGrey: '#FCFCFD',
           grey: '#F5F5F5',
+          darkGrey: '#F2F4F7',
           border: '#D0D5DD',
           placeholder: '#667085',
         },
@@ -25,6 +26,9 @@ export default {
           dark: '#101828',
           light: '#667085',
         },
+      },
+      minWidth: {
+        72: '18rem',
       },
     },
   },

@@ -5,7 +5,21 @@ type Props = {
   imgSrc?: string
 };
 
-export const AccountPhoto = ({ logged, imgSrc }: Pick<Props, 'logged' | 'imgSrc'>): JSX.Element => {
+type AccountPhotoProps = Pick<Props, 'logged' | 'imgSrc'> & { logo?: boolean };
+
+type TextProps = Pick<Props, 'logged' | 'name' | 'email'>;
+
+export const AccountPhoto = ({ logged, imgSrc, logo }: AccountPhotoProps): JSX.Element => {
+  if (logo) {
+    return (
+      <img
+        alt="Typetone"
+        className="rounded-full w-10 h-10 mr-3"
+        src="logo.svg"
+      />
+    );
+  }
+
   if (logged) {
     return (
       <img
@@ -21,7 +35,7 @@ export const AccountPhoto = ({ logged, imgSrc }: Pick<Props, 'logged' | 'imgSrc'
   );
 };
 
-const Text = ({ logged, name, email }: Pick<Props, 'logged' | 'name' | 'email'>): JSX.Element => {
+const Text = ({ logged, name, email }: TextProps): JSX.Element => {
   if (logged) {
     return (
       <>
