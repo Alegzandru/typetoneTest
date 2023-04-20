@@ -1,11 +1,12 @@
 import { AccountPhoto } from '~/components/AccountTab/AccountTab';
 
 type Props = {
-  text: string;
+  text: string
   type: 'question' | 'answer'
+  className?: string
 };
 
-const ChatMessage = ({ text, type }: Props): JSX.Element => {
+const ChatMessage = ({ text, type, className }: Props): JSX.Element => {
   const isAnswer = type === 'answer';
 
   return (
@@ -13,6 +14,7 @@ const ChatMessage = ({ text, type }: Props): JSX.Element => {
       className={`
         p-4 flex justify-start items-center w-full
         ${isAnswer ? 'bg-ui-darkGrey' : 'bg-white'}
+        ${className}
       `}
     >
       <AccountPhoto logo={isAnswer} />

@@ -1,7 +1,7 @@
 import HeaderTab from '~/components/HeaderTab/HeaderTab';
 import AccountTab from '~/components/AccountTab/AccountTab';
 
-const Header = () => (
+const Header = (): JSX.Element => (
   <div className="p-3 mb-3 w-full rounded-xl bg-white flex items-center justify-between">
     <img
       src="logoExtended.png"

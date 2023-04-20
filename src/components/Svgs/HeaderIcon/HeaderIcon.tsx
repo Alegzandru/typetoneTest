@@ -4,7 +4,7 @@ export type HeaderIconType = 'templates' | 'history' | 'chat';
 
 type Props = { type: HeaderIconType, inheritStroke?: boolean } & Pick<SVGAttributes<SVGElement>, 'className'>;
 
-const HeaderIcon = ({ type, className, inheritStroke }: Props): JSX.Element | null => {
+const HeaderIcon = ({ type, className, inheritStroke }: Props): JSX.Element => {
   if (type === 'templates') {
     return (
       <svg className={className} width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">

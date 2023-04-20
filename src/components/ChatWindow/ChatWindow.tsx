@@ -20,22 +20,27 @@ const ChatWindow = (): JSX.Element => {
     setPrompt('');
   };
 
-  const renderedMessages = useMemo(() => questions.map((question, index) => {
-    const hasAnswer = Boolean(answers[index]);
+  const renderedMessages = useMemo(() => {
+    const elements: JSX.Element[] = [];
+    for (let index = questions.length - 1; index >= 0; index -= 1) {
+      const hasAnswer = Boolean(answers[index]);
 
-    return (
-      <>
-        <ChatMessage text={question} type="question" />
-        {hasAnswer && <ChatMessage text={answers[index]} type="answer" />}
-      </>
-    );
-  }), [questions, answers]);
+      elements.push(
+        <>
+          {hasAnswer && <ChatMessage text={answers[index]} type="answer" />}
+          <ChatMessage text={questions[index]} type="question" className={index === questions.length ? 'mt-auto' : ''} />
+        </>,
+      );
+    }
+
+    return elements;
+  }, [questions, answers]);
 
   return (
     <div className="grow w-full flex items-end justify-between min-h-0">
       <SideBar />
-      <div className="h-full bg-ui-darkGrey rounded-xl grow flex flex-col justify-end items-center overflow-hidden">
-        <ul className="grow w-full flex flex-col justify-end overflow-y-auto">
+      <div className="h-full bg-ui-darkGrey rounded-xl grow flex flex-col justify-end items-center overflow-hidden relative">
+        <ul className="grow h-full w-full flex flex-col-reverse overflow-y-auto">
           {renderedMessages}
         </ul>
         <form

@@ -30,6 +30,9 @@ export default {
       minWidth: {
         72: '18rem',
       },
+      spacing: {
+        21: '5.25rem',
+      },
     },
   },
   plugins: [],

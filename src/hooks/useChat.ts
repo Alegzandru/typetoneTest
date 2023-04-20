@@ -1,8 +1,14 @@
-import { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 
 const API_KEY = import.meta.env.VITE_OPENAI_KEY;
 
-const useChat = () => {
+type ReturnType = {
+  questions: string[]
+  answers: string[]
+  setQuestions: React.Dispatch<React.SetStateAction<string[]>>
+};
+
+const useChat = (): ReturnType => {
   const [questions, setQuestions] = useState<string[]>([]);
   const [answers, setAnswers] = useState<string[]>([]);
 
